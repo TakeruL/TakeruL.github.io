@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 1200px;
+            margin: auto;
+        }
+        .page-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .page-title .title-text *{
+            display: inline;
+        }
+        .page-title .title-text h2 {
+            font-size: 28px;
+        }
+        .page-title .title-text span {
+            margin: 0 10px;
+            color: #6c6d6e;
+        }
+        .page-title .title-a a {
+            text-decoration: none;
+            color: #f65936;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .item-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .big-item {
+            width: 570px;
+            margin-right: 30px;
+        }
+        .big-item .text-area {
+            display: flex;
+        }
+        .big-item img {
+            width: 100%;
+            border-radius: 5%;
+        }
+        .big-item a {
+            text-decoration: none;
+            color: inherit;
+        }.item:nth-child(odd) {
+            margin-right: 30px;
+        }
+        .item a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .row-item {
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+        }
+        .row-item .item {
+            width: 280px;
+        }
+        .row-item .item img {
+            width: 100%;
+            border-radius: 5%;
+        }
+    </style>
+</head>
+<body>
+    <section class="sec1">
+        <div class="container">
+            <div class="page-title">
+                <div class="title-text">
+                    <h2>旅行者にできること</h2>
+                    <span>What Travelers Can Do</span>
+                </div>
+                <div class="title-a">
+                    <a href="">すべて見る</a>
+                </div>
+            </div>
+            <div class="item-group">
+                <div class="big-item">
+                    <a href="">
+                        <div class="big-pic">
+                            <img src="01.jpg" alt="">
+                        </div>
+                        <div class="text-area">
+                            <div class="title">
+                                <h2>11月はサンゴ白化啓発月間　〜日常でできること〜</h2>
+                            </div>
+                            <div class="content">
+                                <p>世界のサンゴ礁を救うことを使命としている環境NGO団体コーラル・リーフ・アライアンス（The Coral Reef Alliance）は、2023年11月を「サンゴ白化啓発月間」と発表しました。</p>
+                                <span>2023.11.09</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row-item">
+                    <div class="item">
+                        <a href="">
+                            <div class="item-pic">
+                                <img src="02.png" alt="">
+                            </div>
+                            <div class="title">
+                                <h3>マウイ島の山火事救援金、日本円で受付開始</h3>
+                            </div>
+                            <div class="date">
+                                <span>2023.08.18</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <div class="item-pic">
+                                <img src="03.png" alt="">
+                            </div>
+                            <div class="title">
+                                <h3>2023年7月後半～9月にハワイで開催されるカルチャーイベント</h3>
+                            </div>
+                            <div class="date">
+                                <span>2023.07.20</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <div class="item-pic">
+                                <img src="04.jpg" alt="">
+                            </div>
+                            <h3>第46回プリンスロット•フラフェスティバル、7月に開催</h3>
+                            <span>2023.06.22</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <div class="item-pic">
+                                <img src="05.png" alt="">
+                            </div>
+                            <h3>今年もアースデーにビーチクリーンを開催！</h3>
+                            <span>2023.04.18</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
