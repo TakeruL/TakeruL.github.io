@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 1200px;
+    margin: auto;
+}
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+.page-title .title-text *{
+    display: inline;
+}
+.page-title .title-text h2 {
+    font-size: 28px;
+}
+.page-title .title-text span {
+    margin: 0 10px;
+    color: #6c6d6e;
+}
+.page-title .title-a a {
+    text-decoration: none;
+    color: #f65936;
+    font-size: 13px;
+    font-weight: bold;
+}
+.item-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+.big-item {
+    width: 570px;
+    margin-right: 30px;
+}
+.big-item .text-area {
+    display: flex;
+    margin: 30px 0;
+}
+.big-item .text-area .title {
+    width: 255px;
+    margin-right: 30px;
+    
+}
+.big-item .text-area .title h2 {
+    font-size: 24px;
+}
+.big-item .text-area .content {
+    width: 285px;
+}
+.big-item .text-area .content .date {
+    font-size: 12px;
+}
+.big-item .text-area .content p {
+    font-size: 14px;
+}
+.big-item img {
+    width: 100%;
+    border-radius: 5%;
+}
+.big-item a {
+    text-decoration: none;
+    color: inherit;
+}
+.item:nth-child(odd) {
+    margin-right: 30px;
+}
+.item a {
+    text-decoration: none;
+    color: inherit;
+}
+.item a .title h3 {
+    font-size: 16px;
+}
+.item a .date {
+    font-size: 12px;
+}
+.row-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+}
+.row-item .item {
+    width: 280px;
+}
+.row-item .item img {
+    width: 100%;
+    border-radius: 5%;
+}
