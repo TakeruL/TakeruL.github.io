@@ -11,7 +11,6 @@
         }
         .container {
             width: 960px;
-            position: relative;
             margin: 60px auto;
         }
         .gray {
@@ -24,17 +23,27 @@
         }
         .image {
             position: relative;
-            display: block;
-            width: 100%;
-            text-align: center;
+            width: 700px;
+            margin-left: auto;
+            margin-right: 100px;
+        }
+        .image .cover {
+            width: 680px;
+            margin-right: -40px;
+        }
+        .image a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
         .image img {
-            vertical-align: middle;
+            width: 100%;
+            vertical-align: top;
         }
         .feature {
             position: absolute;
-            width: 350px;
-            margin-top: -500px;
+            width: 320px;
+            margin-top: -553px;
             color: white;
         }
         .feature-title {
@@ -61,7 +70,7 @@
         }
         .reason {
             position: relative;
-            width: 700px;
+            width: 640px;
             background-color: #eeeeee;
             padding: 20px;
             margin-top: -40px;
@@ -85,11 +94,24 @@
             border-radius: 10%;
             margin: 5px 0;
         }
-        .reason-text::before {
-            content: '●';
-            color: #cc0a0a;
-            padding-right: 5px;
-            font-size: 8px;
+        .play {
+            width: 60px;
+            height: 40px;
+            background-color: #f00;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 10%;
+        }
+        .container:nth-child(even) .feature{
+            margin-left: 600px;
+        }
+        .container:nth-child(even) .image {
+            margin-left: 0;
+        }
+        .container:nth-child(even) .reason {
+            margin-top: -50px;
+            margin-left: auto;
         }
     </style>
 </head>
@@ -99,7 +121,12 @@
             <div class="gray"></div>
             <div class="image">
                 <a href="#">
-                    <img src="https://picsum.photos/id/684/600/400?grayscale">
+                    <div class="cover">
+                        <img src="https://picsum.photos/id/684/600/400?grayscale">
+                    </div>
+                    <div class="play">
+                        ▶
+                    </div>
                 </a>
             </div>
             <div class="feature">
@@ -115,11 +142,73 @@
             <div class="reason">
                 <h3>因為我們做了這些革新<div class="hr"></div></h3>
                 <h4 class="reason-title">低重心設計</h4>
-                <ul class="reason-text">透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</ul>
+                <li class="reason-text">透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</li>
                 <h4 class="reason-title">車體剛性強化</h4>
-                <ul class="reason-text">車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性強化駕馭穩定性及安全性。</ul>
+                <li class="reason-text">車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性強化駕馭穩定性及安全性。</li>
                 <h4 class="reason-title">四輪獨立懸吊</h4>
-                <ul class="reason-text">搭載全新四輪獨立懸吊設定，透過懸吊的高承載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升馭樂趣。</ul>
+                <li class="reason-text">搭載全新四輪獨立懸吊設定，透過懸吊的高承載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升馭樂趣。</li>
+            </div>
+        </div>
+        <div class="container">
+            <div class="gray"></div>
+            <div class="image">
+                <a href="#">
+                    <div class="cover">
+                        <img src="https://picsum.photos/id/684/600/400?grayscale">
+                    </div>
+                    <div class="play">
+                        ▶
+                    </div>
+                </a>
+            </div>
+            <div class="feature">
+                <div class="feature-title">
+                    <h2>02</h2>
+                    <h2>安全守護</h2>
+                </div>
+                <div class="feature-text">
+                    <h2>行車更安心的高剛性車體</h2>
+                    <p>您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程，毫無後顧之憂。</p>
+                </div>
+            </div>
+            <div class="reason">
+                <h3>因為我們做了這些革新<div class="hr"></div></h3>
+                <h4 class="reason-title">主動安全</h4>
+                <li class="reason-text">可以先進的TSS系統主動偵測路況，輔助駕駛判斷路況並維持行車安全。</li>
+                <h4 class="reason-title">被動安全</h4>
+                <li class="reason-text">堅固的高剛性車體，使用熱沖壓材料的高強度抗扭鋼板，強化座艙對意外事故的保護力。</li>
+            </div>
+        </div>
+        <div class="container">
+            <div class="gray"></div>
+            <div class="image">
+                <a href="#">
+                    <div class="cover">
+                        <img src="https://picsum.photos/id/684/600/400?grayscale">
+                    </div>
+                    <div class="play">
+                        ▶
+                    </div>
+                </a>
+            </div>
+            <div class="feature">
+                <div class="feature-title">
+                    <h2>03</h2>
+                    <h2>乘坐舒適</h2>
+                </div>
+                <div class="feature-text">
+                    <h2>令人放鬆舒適的車室空間</h2>
+                    <p>車室空間設計著重人體工學，透過方向盤，踏板等位置優化，追求更舒適的駕駛位置，並以新型座椅設計，提高座椅包覆性，致力實現長途駕駛疲勞的舒適駕馭體驗。</p>
+                </div>
+            </div>
+            <div class="reason">
+                <h3>因為我們做了這些革新<div class="hr"></div></h3>
+                <h4 class="reason-title">駕駛位置最佳化</h4>
+                <li class="reason-text">針對駕駛位置進行徹底的修改，讓駕駛者可如同握手般自然且舒適地操控方向盤。</li>
+                <h4 class="reason-title">駕馭視野佳</h4>
+                <li class="reason-text">考量駕駛坐進車內的高度，透過前擋風玻璃位置的調整，達到盲區極小化，使駕駛視野更開闊，同步提升駕取安全。</li>
+                <h4 class="reason-title">更寧靜的車室</h4>
+                <li class="reason-text">採用最新三層結構的隔音材料，與引擎，變速箱的零件改革，將座艙的震動抑制在最小限度，提供乘客舒適安靜的感受。</li>
             </div>
         </div>
     </section>
