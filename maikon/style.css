@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+header .container{
+    display: flex;
+    position: sticky;
+    top: -120px;
+    padding: 20px;
+}
+
+nav {
+    width: 60%;
+    margin: auto;
+    padding-left: 200px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5d6678;
+    font-size: 18px;
+    padding: 0px 15px;
+}
+
+.h-logo {
+    width: 20%;
+}
+
+.h-logo img {
+    vertical-align: bottom;
+}
+.sub {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: auto;
+    text-decoration: none;
+    color: #5d6678;
+    font-weight: bold;
+    border: 1px solid #b1afafee;
+    border-radius: 10%;
+}
+
+.slogan {
+    display: flex;
+    margin: 50px 0;
+}
+
+.slogan-text-area {
+    width: 50%;
+    margin: auto 0;
+}
+
+.slogan-image {
+    width: 50%;
+}
+
+.slogan-image img {
+    width: 100%;
+}
