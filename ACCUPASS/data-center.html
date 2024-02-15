@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主辦中心</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./grid.css">
+    <link rel="stylesheet" href="./profile-container.css">
+    <link rel="stylesheet" href="./mark_style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./gridHostCenter.css">
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-switch">
+
+
+    <div class="hostCenter-container">
+
+        <div class="host-header">
+
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-container">
+
+                <div class="nav-host-logo-section">
+                    <img src="./logos and search/host-logo.png" alt="">
+
+                    <label for="menu-switch" class="cross">
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="menu-container">
+                    <ul class="aside-menu">
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-days"></i>活動列表</a></li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <i class="fa-solid fa-sack-dollar"></i>加值管理<i class="fa-solid fa-chevron-down"></i></a>
+
+                        </li>
+                        <li class="menu-item"><a href="./data-center.html"><i class="fa-solid fa-chart-line"></i>數據中心</a></li>
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-circle-info"></i>服務介紹</a></li>
+                    </ul>
+                    <button class="create-activity-btn">辦活動</button>
+                </div>
+            </nav>
+
+            <img class="host-logo" src="./logos and search/host-logo.png" alt="主辦中心logo">
+
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="logos and search//profile-photo.png" alt="大頭照">
+                </div>
+                <button class="create-activity-btn">辦活動</button>
+            </div>
+        </div>
+
+        <nav class="side-menu">
+            <div class="nav-host-logo-section">
+                <img src="./logos and search/host-logo.png" alt="">
+            </div>
+            <div class="menu-container">
+                <ul class="aside-menu">
+                    <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-days"></i>活動列表</a></li>
+                    <li class="menu-item">
+                        <a href="#">
+                            <i class="fa-solid fa-sack-dollar"></i>加值管理 <i class="fa-solid fa-chevron-down"></i></a>
+
+
+                    </li>
+                    <li class="menu-item"><a href="./data-center.html"><i class="fa-solid fa-chart-line"></i>數據中心</a></li>
+                    <li class="menu-item"><a href="#"><i class="fa-solid fa-circle-info"></i>服務介紹</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="main-container">
+            <div class="content-container">
+                <div class="page-title">
+                    <h2>成效追蹤</h2>
+                    <p>透過建立短網址紀錄在不同媒體平台宣傳活動的轉換成效，視覺化成效分析幫助你優化廣告投放或外部推廣策略</p>
+                </div>
+                <div class="main-page">
+                    <div class="data-table-header">
+                        <p>平均30分鐘更新數據</p>
+                        <a href="">
+                            <button class="export-history">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.615 13.135a1.385 1.385 0 1 0 0-2.77h-7.48v-7.48a1.385 1.385 0 1 0-2.77 0v7.48h-7.48a1.385 1.385 0 1 0 0 2.77h7.48v7.48a1.385 1.385 0 1 0 2.77 0v-7.48h7.48Z" fill="current"></path></svg>
+                                <span>新增短網址</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="data-table-filter">
+                        <div class="filter-selector">
+                            <span>時間</span>
+                            <i></i>
+                        </div>
+                        <div class="filter-date-picker">
+                            <div class="date-picker"><p>2024.01.18</p></div>
+                            <span>~</span>
+                            <div class="date-picker"><p>2024.02.15</p>
+                            </div>
+                        </div>
+                        <div class="filter-button">
+                            <button>篩選</button>
+                            <button>下載 Excel</button>
+                        </div>
+                    </div>
+                    <div class="data-table-chart-container">
+                        <img src="./logos and search/screenshot_1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./gridHostCenter.js"></script>
+</body>
+
+</html>
