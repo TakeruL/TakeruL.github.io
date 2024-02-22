@@ -50,6 +50,7 @@
 
 .list-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding: 5px 20px;
 }
@@ -89,7 +90,8 @@
 }
 
 .list-item-name {
-    width: calc(100% - 590px);
+    /* width: calc(100% - 590px); */
+    width: 388px;
 }
 
 .list-item-name h3 {
