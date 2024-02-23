@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./header_footer.css">
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu-switch">
+    <input type="checkbox" name="" id="profile-container-switch">
+    <input type="checkbox" name="" id="activity-switch">
+    <input type="checkbox" name="" id="memberCenter-switch">
+    <header class="header ">
+        <div class="header-container">
+            <a href="#" class="back-page">
+                <span>< 回頁面</span>
+            </a>
+            <a href="#" class="logo-image">
+                <img class="logo" src="./img/host-logo.png" alt="">
+            </a>
+            <div class="createEvent-container">
+                <label for="profile-container-switch">
+                    <div class="photo-container">
+                        <img src="./img/profile-photo.png" alt="">
+                    </div>
+                </label>
+                <a href="#"><button class="createBtn">辦活動</button> </a>
+            </div>
+            <div class="profile-container">
+                <ul class="editor">
+                    <li><a href="#"><button class="browse">探索活動</button></a>
+                        <ul class="">
+                            <li><a href="#">戶外體驗</a></li>
+                            <li><a href="#">公益講座</a></li>
+                            <li><a href="#">學習課程</a></li>
+                            <li><a href="#">查看更多</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><button class="edit">會員中心</button></a>
+                        <ul class="">
+                            <li><a href="#">我的票券</a></li>
+                            <li><a href="#">我的活動</a></li>
+                            <li><a href="#">關於自己</a></li>
+                            <li><a href="#">變更密碼</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><button class="edit-info">主辦中心</button></a></li>
+                </ul>
+                <div class="logout">
+                    <!-- <p>tino010394@gmail.com</p> -->
+                    <a href="">登出</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="main-container">
+        
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <p class="companyName">eJoin Inc</p>
+            <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="./header_footer.js"></script>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./header_footer.css">
+
+    @await RenderSectionAsync("topCSS", required: false)
+    @await RenderSectionAsync("topJS", required: false)
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu-switch">
+    <input type="checkbox" name="" id="profile-container-switch">
+    <input type="checkbox" name="" id="activity-switch">
+    <input type="checkbox" name="" id="memberCenter-switch">
+    <header class="header ">
+        <div class="header-container">
+            <a href="#" class="back-page">
+                <span>< 回頁面</span>
+            </a>
+            <a href="#" class="logo-image">
+                <img class="logo" src="./img/host-logo.png" alt="">
+            </a>
+            <div class="createEvent-container">
+                <label for="profile-container-switch">
+                    <div class="photo-container">
+                        <img src="./img/profile-photo.png" alt="">
+                    </div>
+                </label>
+                <a href="#"><button class="createBtn">辦活動</button> </a>
+            </div>
+            <div class="profile-container">
+                <ul class="editor">
+                    <li>
+                        <a href="#"><button class="browse">探索活動</button></a>
+                        <ul class="">
+                            <li><a href="#">戶外體驗</a></li>
+                            <li><a href="#">公益講座</a></li>
+                            <li><a href="#">學習課程</a></li>
+                            <li><a href="#">查看更多</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><button class="edit">會員中心</button></a>
+                        <ul class="">
+                            <li><a href="#">我的票券</a></li>
+                            <li><a href="#">我的活動</a></li>
+                            <li><a href="#">關於自己</a></li>
+                            <li><a href="#">變更密碼</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><button class="edit-info">主辦中心</button></a></li>
+                </ul>
+                <div class="logout">
+                    <!-- <p>tino010394@gmail.com</p> -->
+                    <a href="">登出</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <p class="companyName">eJoin Inc</p>
+            <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+        </div>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./header_footer.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+
+        @await RenderSectionAsync("endJS", required: false)
+</body>
+
+</html>
