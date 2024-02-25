@@ -126,12 +126,9 @@ body {
 
 .activity-list {
     display: block;
-    height: 550px;
-    overflow: auto;
-    position: relative;
 }
 
-.activity-list::before,
+/* .activity-list::before,
 .activity-list::after {
     content: "";
     position: absolute;
@@ -153,7 +150,7 @@ body {
 
 .activity-list::-webkit-scrollbar {
     width: 0;
-}
+} */
 
 a {
     text-decoration: none;
