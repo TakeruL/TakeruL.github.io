@@ -10,7 +10,7 @@ html,body {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #eaeaea;
+    background-color: #fff;
     position: relative;
     line-height: 1.5;
     
