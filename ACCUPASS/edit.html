@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./header_footer.css">
+    <link href="./edit.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu-switch">
+    <input type="checkbox" name="" id="profile-container-switch">
+    <input type="checkbox" name="" id="activity-switch">
+    <input type="checkbox" name="" id="memberCenter-switch">
+    <header class="header">
+        <div class="header-container">
+            <a asp-controller="Home" asp-action="Index" class="back-page">
+                <span>
+                    < 回首頁</span>
+            </a>
+            <a asp-controller="Organize" asp-action="Index" class="logo-image">
+                <img class="logo" src="./images/organizerLOGO.png" alt="">
+            </a>
+            <div class="createEvent-container">
+                <label for="profile-container-switch" style="margin: auto 0; display: flex; align-items: center;">
+                    <div class="photo-container">
+                        <img src="./images/profilePicture.png" alt="">
+                    </div>
+                </label>
+                <a href="~/Host/Index"><button class="createBtn">辦活動</button> </a>
+            </div>
+            <div class="profile-container">
+                <ul class="editor">
+                    <li>
+                        <a href="#" class="">
+                            <i class="fa-solid fa-magnifying-glass"></i>探索活動
+                        </a>
+                        <ul class="">
+                            <li><a asp-controller="Home" asp-action="Search">戶外體驗</a></li>
+                            <li><a asp-controller="Home" asp-action="Search">公益講座</a></li>
+                            <li><a asp-controller="Home" asp-action="Search">學習課程</a></li>
+                            <li><a asp-controller="Home" asp-action="Search">查看更多</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class=""><i class="fa-solid fa-id-card"></i>會員中心</a>
+                        <ul class="">
+                            <li><a asp-controller="Member" asp-action="MyProfile">關於自己</a></li>
+                            <li><a asp-controller="Member" asp-action="MyTicket">我的票券</a></li>
+                            <li><a asp-controller="Member" asp-action="MyEvent">我的活動</a></li>
+                            <li><a asp-controller="Member" asp-action="MyAccount">變更密碼</a></li>
+                        </ul>
+                    </li>
+                    <li><a asp-controller="Organize" asp-action="Index" class=""><i
+                                class="fa-solid fa-user-pen"></i>主辦中心</a></li>
+                </ul>
+                <div class="logout">
+                    <!-- <p>tino010394@gmail.com</p> -->
+                    <a href="">登出</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="page-title mb-4">
+            <h2>活動編輯</h2>
+            <p class="text-secondary">在此編輯所有關於該活動的設定</p>
+        </div>
+
+        <div class="select-edit-part mb-5">
+            <ul class="nav nav-tabs d-flex justify-content-evenly">
+                <li class="nav-item">
+                    <button class="nav-link active" aria-current="page">設定主題</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">基本內容</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">活動內容</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link">票券設定</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="select-theme-content nav-page">
+            <h3 class="text-center">
+                最多選兩個
+            </h3>
+            <div class="select-icon">
+                <div class="theme-card" :class="isSelected(1)" id="theme-1">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_arts.svg" alt="" />
+                    <p class="theme-name">藝文</p>
+                </div>
+                <div class="theme-card" :class="isSelected(2)" id="theme-2">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_blockchain.svg" alt="" />
+                    <p class="theme-name">區塊鏈</p>
+                </div>
+                <div class="theme-card" :class="isSelected(3)" id="theme-3">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_business.svg" alt="" />
+                    <p class="theme-name">商業</p>
+                </div>
+                <div class="theme-card" :class="isSelected(4)" id="theme-4">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_charitable.svg" alt="" />
+                    <p class="theme-name">公益</p>
+                </div>
+                <div class="theme-card" :class="isSelected(5)" id="theme-5">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_design.svg" alt="" />
+                    <p class="theme-name">設計</p>
+                </div>
+                <div class="theme-card" :class="isSelected(6)" id="theme-6">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_entertainment.svg" alt="" />
+                    <p class="theme-name">娛樂</p>
+                </div>
+                <div class="theme-card" :class="isSelected(7)" id="theme-7">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_family.svg" alt="" />
+                    <p class="theme-name">親子</p>
+                </div>
+                <div class="theme-card" :class="isSelected(8)" id="theme-8">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_fashion.svg" alt="" />
+                    <p class="theme-name">時尚</p>
+                </div>
+                <div class="theme-card" :class="isSelected(9)" id="theme-9">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_film.svg" alt="" />
+                    <p class="theme-name">電影</p>
+                </div>
+                <div class="theme-card" :class="isSelected(10)" id="theme-10">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_food.svg" alt="" />
+                    <p class="theme-name">美食</p>
+                </div>
+                <div class="theme-card" :class="isSelected(11)" id="theme-11">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_game.svg" alt="" />
+                    <p class="theme-name">遊戲</p>
+                </div>
+                <div class="theme-card" :class="isSelected(12)" id="theme-12">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_handmade.svg" alt="" />
+                    <p class="theme-name">手作</p>
+                </div>
+                <div class="theme-card" :class="isSelected(13)" id="theme-13">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_health.svg" alt="" />
+                    <p class="theme-name">健康</p>
+                </div>
+                <div class="theme-card" :class="isSelected(14)" id="theme-14">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_investment.svg" alt="" />
+                    <p class="theme-name">投資</p>
+                </div>
+                <div class="theme-card" :class="isSelected(15)" id="theme-15">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_learning.svg" alt="" />
+                    <p class="theme-name">學習</p>
+                </div>
+                <div class="theme-card" :class="isSelected(16)" id="theme-16">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_music.svg" alt="" />
+                    <p class="theme-name">音樂</p>
+                </div>
+                <div class="theme-card" :class="isSelected(17)" id="theme-17">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_pet.svg" alt="" />
+                    <p class="theme-name">寵物</p>
+                </div>
+                <div class="theme-card" :class="isSelected(18)" id="theme-18">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_photography.svg" alt="" />
+                    <p class="theme-name">攝影</p>
+                </div>
+                <div class="theme-card" :class="isSelected(19)" id="theme-19">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_sports.svg" alt="" />
+                    <p class="theme-name">運動</p>
+                </div>
+                <div class="theme-card" :class="isSelected(20)" id="theme-20">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_startup.svg" alt="" />
+                    <p class="theme-name">創業</p>
+                </div>
+                <div class="theme-card" :class="isSelected(21)" id="theme-21">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_technology.svg" alt="" />
+                    <p class="theme-name">科技</p>
+                </div>
+                <div class="theme-card" :class="isSelected(22)" id="theme-22">
+                    <i class="fa-solid fa-check"></i>
+                    <img src="./images/new_travel.svg" alt="" />
+                    <p class="theme-name">戶外體驗</p>
+                </div>
+            </div>
+            <button type="button" class="off save-btn btn rounded-pill w-100 py-2 fw-bolder fs-5">儲存</button>
+        </div>
+
+        <div class="basic-info-content nav-page">
+            <h3>開始建立活動資訊</h3>
+            <div class="update-pic">
+                <img :src="eventItem.imageUrl" alt="" />
+                <label class="update-input" for="image-input">
+                    上傳圖片，1080x540 pixel，檔案小於4MB
+                    <input id="image-input" type="file" accept="image/*" />
+                </label>
+            </div>
+            <div id="form" class="update-info">
+                <div>
+                    <h4>活動名稱</h4>
+                    <input type="text" id="event-title" class="form-control" :value="eventItem.eventName" required />
+                </div>
+
+                <div>
+                    <h4>活動時間</h4>
+                    <p class="form-text">開始時間</p>
+                    <div class="time-interval">
+                        <input type="date" id="strat-date" class="form-control"
+                            :value="eventItem.startTime.toLocaleDateString('en-CA')" />
+                        <input type="text" id="strat-hour" class="form-control"
+                            :value="eventItem.startTime.getHours()" />
+                        <input type="text" id="strat-min" class="form-control"
+                            :value="eventItem.startTime.getMinutes()" />
+                    </div>
+                    <p class="form-text mt-3">結束時間</p>
+                    <div class="time-interval">
+                        <input type="date" id="end-date" class="form-control"
+                            :value="eventItem.endTime.toLocaleDateString('en-CA')" />
+                        <input type="text" id="end-hour" class="form-control" :value="eventItem.endTime.getHours()" />
+                        <input type="text" id="end-min" class="form-control" :value="eventItem.endTime.getMinutes()" />
+                    </div>
+                </div>
+
+                <div>
+                    <h4>活動地點</h4>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="inputGroupSelect01" value="2">
+                            <option>選擇縣市</option>
+                            <option value="1">新北市</option>
+                            <option value="2">台北市</option>
+                            <option value="3">基隆市</option>
+                        </select>
+                        <input type="text" class="form-control w-75" aria-label="Text input with dropdown button"
+                            placeholder="詳細地址（鄉鎮市區、道路、街名、巷弄號、樓層）" :value="eventItem.eventAddress" />
+                    </div>
+                    <p class="form-text mt-3">補充說明</p>
+                    <input class="form-control" type="text" :value="eventItem.eventAddressDetail" />
+                    <div class="map-container"></div>
+                </div>
+            </div>
+            <button type="submit" class="save-btn btn rounded-pill w-100 py-2 fw-bolder fs-5">儲存</button>
+        </div>
+
+        <div class="event-description-content nav-page">
+            <section>
+                <h4>活動摘要</h4>
+                <p>請充分描繪活動亮點，包括「活動關鍵詞」。以提高 Google 搜尋的曝光成效。</p>
+                <textarea name="summary" id="" :value="eventItem.eventSummary"></textarea>
+            </section>
+            <section>
+                <h4>活動簡介</h4>
+                <p>若你的活動為收費活動，為避免消費爭議，請於活動內容中加上主辦是否開立發票之相關說明。</p>
+                <textarea name="introduction" id="editor" :value="eventItem.eventIntro"></textarea>
+            </section>
+            <button type="button" class="save-btn btn rounded-pill w-100 py-2 fw-bolder fs-5">儲存</button>
+        </div>
+
+        <div class="ticket-setting-content nav-page">
+            <table class="ticket-part">
+                <thead>
+                    <tr>
+                        <th>票券名稱</th>
+                        <th>數量</th>
+                        <th>價格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <template v-for="(ticket, index) in eventItem.ticket" :key="ticket.name">
+                        <tr class="ticket-info">
+                            <td>
+                                <input type="text" :value="ticket.name" />
+                            </td>
+                            <td>
+                                <input type="text" id="" :value="ticket.num" />
+                            </td>
+                            <td>
+                                <input type="text" id="" :value="ticket.price" />
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-evenly">
+                                    <button>
+                                        <i class="fa-solid fa-gear"></i>
+                                    </button>
+                                    <button>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="settings">
+                            <td colspan="4" class="setting-wrap p-3">
+                                <p class="fs-5">售票時間</p>
+                                <label>開始</label>
+                                <div class="start-set d-flex gap-3">
+                                    <input type="date" class="end-date"
+                                        :value="ticket.startTime.toLocaleDateString('en-CA')" />
+                                    <input type="time" class="end-time" :value="timeToStr(ticket.startTime)" />
+                                </div>
+                                <label>結束</label>
+                                <div class="end-set d-flex gap-3">
+                                    <input type="date" class="end-date"
+                                        :value="ticket.endTime.toLocaleDateString('en-CA')" />
+                                    <input type="time" class="end-time" :value="timeToStr(ticket.endTime)" />
+                                </div>
+                                <button class="d-block mx-auto mt-3 btn w-100 bg-transparent text-primary fs-5">
+                                    收合資訊
+                                </button>
+                            </td>
+                        </tr>
+                    </template>
+                    <!-- <tr class="ticket-info">
+                        <td>
+                            <input type="text" :value="eventItem.ticket[0].name" />
+                        </td>
+                        <td>
+                            <input type="text" name="" id="" :value="eventItem.ticket[0].num" />
+                        </td>
+                        <td>
+                            <input type="text" name="" id="" :value="eventItem.ticket[0].price" />
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-evenly">
+                                <button>
+                                    <i class="fa-solid fa-gear"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="settings">
+                        <td colspan="4" class="setting-wrap p-3">
+                            <p class="fs-5">售票時間</p>
+                            <label>開始</label>
+                            <div class="start-set d-flex gap-3">
+                                <input type="date" class="end-date"
+                                    :value="eventItem.ticket[0].startTime.toLocaleDateString('en-CA')" />
+                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[0].startTime)" />
+                            </div>
+                            <label>結束</label>
+                            <div class="end-set d-flex gap-3">
+                                <input type="date" class="end-date"
+                                    :value="eventItem.ticket[0].endTime.toLocaleDateString('en-CA')" />
+                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[0].endTime)"/>
+                            </div>
+                            <button class="d-block mx-auto mt-3 btn w-100 bg-transparent text-primary fs-5">
+                                收合資訊
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="ticket-info">
+                        <td>
+                            <input type="text" :value="eventItem.ticket[1].name"/>
+                        </td>
+                        <td>
+                            <input type="text" name="" id="" :value="eventItem.ticket[1].num"/>
+                        </td>
+                        <td>
+                            <input type="text" name="" id="" :value="eventItem.ticket[1].price"/>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-evenly">
+                                <button>
+                                    <i class="fa-solid fa-gear"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="settings">
+                        <td colspan="4" class="setting-wrap p-3">
+                            <p class="fs-5">售票時間</p>
+                            <label>開始</label>
+                            <div class="start-set d-flex gap-3">
+                                <input type="date" class="end-date"
+                                    :value="eventItem.ticket[1].startTime.toLocaleDateString('en-CA')" />
+                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[1].startTime)" />
+                            </div>
+                            <label>結束</label>
+                            <div class="end-set d-flex gap-3">
+                                <input type="date" class="end-date"
+                                    :value="eventItem.ticket[1].endTime.toLocaleDateString('en-CA')" />
+                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[1].endTime)"/>
+                            </div>
+                            <button class="d-block mx-auto mt-3 btn w-100 bg-transparent text-primary fs-5">
+                                收合資訊
+                            </button>
+                        </td>
+                    </tr> -->
+
+                    <tr class="add-tickets">
+                        <td colspan="4" class="add-ticket">
+                            <button class="m-auto d-block btn btn-info fs-5 text-white px-4 py-2">
+                                <i class="fa-solid fa-circle-plus"></i> 新增票券
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="save-btn btn rounded-pill w-100 py-2 fw-bolder fs-5">儲存</button>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <p class="companyName">eJoin Inc</p>
+            <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./header_footer.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+    <script src="./edit.js"></script>
+    <script src="./setCKEditor.js"></script>
+    <script src="./setSelectThemeScript.js"></script>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    eventItem: {
+                        id: 1,
+                        theme: [1, 5],
+                        imageUrl: './images/class.gif',
+                        eventName: "【熱銷】欸等的一小時MVC魔鬼訓練營",
+                        startTime: new Date(2024, 3, 11, 1, 35),
+                        endTime: new Date(2024, 3, 11, 2, 35),
+                        eventCity: "台北市",
+                        eventAddress: "大安區忠孝東路三段96號11號樓之1",
+                        eventAddressDetail: "捷運忠孝新生站",
+                        eventSummary: "接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。",
+                        eventIntro: "接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。 接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。 接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。 接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。 接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。 接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。",
+                        ticket: [
+                            {
+                                name: "2/27 一般學員班",
+                                num: "50",
+                                price: "599",
+                                startTime: new Date(2024, 2, 11, 1, 35),
+                                endTime: new Date(2024, 2, 25, 22, 35),
+                            },
+                            {
+                                name: "2/27 Vip海景第一排",
+                                num: "10",
+                                price: "699",
+                                startTime: new Date(2024, 2, 11, 1, 35),
+                                endTime: new Date(2024, 2, 25, 20, 35),
+                            }
+                        ]
+                    },
+                };
+            },
+            methods: {
+                isSelected(id) {
+                    return this.eventItem.theme.includes(id) ? 'selected' : '';
+                },
+                timeToStr(time) {
+                    return time.toTimeString().slice(0, 5);
+                },
+            },
+            mounted() {
+                // this.getTodoItemsFromStorage()
+            }
+        }).mount(".content");
+    </script>
+</body>
+
+</html>
