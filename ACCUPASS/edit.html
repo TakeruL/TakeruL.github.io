@@ -249,8 +249,8 @@
                 <div>
                     <h4>活動地點</h4>
                     <div class="input-group mb-3">
-                        <select class="form-select" id="inputGroupSelect01" value="2">
-                            <option>選擇縣市</option>
+                        <select class="form-select" id="inputGroupSelect01" :value="eventItem.eventCity">
+                            <option value="0">選擇縣市</option>
                             <option value="1">新北市</option>
                             <option value="2">台北市</option>
                             <option value="3">基隆市</option>
@@ -335,88 +335,6 @@
                             </td>
                         </tr>
                     </template>
-                    <!-- <tr class="ticket-info">
-                        <td>
-                            <input type="text" :value="eventItem.ticket[0].name" />
-                        </td>
-                        <td>
-                            <input type="text" name="" id="" :value="eventItem.ticket[0].num" />
-                        </td>
-                        <td>
-                            <input type="text" name="" id="" :value="eventItem.ticket[0].price" />
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-evenly">
-                                <button>
-                                    <i class="fa-solid fa-gear"></i>
-                                </button>
-                                <button>
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="settings">
-                        <td colspan="4" class="setting-wrap p-3">
-                            <p class="fs-5">售票時間</p>
-                            <label>開始</label>
-                            <div class="start-set d-flex gap-3">
-                                <input type="date" class="end-date"
-                                    :value="eventItem.ticket[0].startTime.toLocaleDateString('en-CA')" />
-                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[0].startTime)" />
-                            </div>
-                            <label>結束</label>
-                            <div class="end-set d-flex gap-3">
-                                <input type="date" class="end-date"
-                                    :value="eventItem.ticket[0].endTime.toLocaleDateString('en-CA')" />
-                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[0].endTime)"/>
-                            </div>
-                            <button class="d-block mx-auto mt-3 btn w-100 bg-transparent text-primary fs-5">
-                                收合資訊
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="ticket-info">
-                        <td>
-                            <input type="text" :value="eventItem.ticket[1].name"/>
-                        </td>
-                        <td>
-                            <input type="text" name="" id="" :value="eventItem.ticket[1].num"/>
-                        </td>
-                        <td>
-                            <input type="text" name="" id="" :value="eventItem.ticket[1].price"/>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-evenly">
-                                <button>
-                                    <i class="fa-solid fa-gear"></i>
-                                </button>
-                                <button>
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="settings">
-                        <td colspan="4" class="setting-wrap p-3">
-                            <p class="fs-5">售票時間</p>
-                            <label>開始</label>
-                            <div class="start-set d-flex gap-3">
-                                <input type="date" class="end-date"
-                                    :value="eventItem.ticket[1].startTime.toLocaleDateString('en-CA')" />
-                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[1].startTime)" />
-                            </div>
-                            <label>結束</label>
-                            <div class="end-set d-flex gap-3">
-                                <input type="date" class="end-date"
-                                    :value="eventItem.ticket[1].endTime.toLocaleDateString('en-CA')" />
-                                <input type="time" class="end-time" :value="timeToStr(eventItem.ticket[1].endTime)"/>
-                            </div>
-                            <button class="d-block mx-auto mt-3 btn w-100 bg-transparent text-primary fs-5">
-                                收合資訊
-                            </button>
-                        </td>
-                    </tr> -->
 
                     <tr class="add-tickets">
                         <td colspan="4" class="add-ticket">
@@ -462,7 +380,7 @@
                         eventName: "【熱銷】欸等的一小時MVC魔鬼訓練營",
                         startTime: new Date(2024, 3, 11, 1, 35),
                         endTime: new Date(2024, 3, 11, 2, 35),
-                        eventCity: "台北市",
+                        eventCity: 2,
                         eventAddress: "大安區忠孝東路三段96號11號樓之1",
                         eventAddressDetail: "捷運忠孝新生站",
                         eventSummary: "接續2022潮旅行，今年活動從「圈」的意象出發，圈是繪畫圓形的動詞，在大武山下的環繞下，以能量豐沛的潮州為半徑，旋轉出從山到海、從農田到結市各種生活樣貌，旋開大武山的按鈕，由圓環往外擴散的各鄉鎮，將能量相互傳送，一起打造出共生共創的生活圈。",
@@ -493,9 +411,6 @@
                 timeToStr(time) {
                     return time.toTimeString().slice(0, 5);
                 },
-            },
-            mounted() {
-                // this.getTodoItemsFromStorage()
             }
         }).mount(".content");
     </script>
